@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <title>Dino Runner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Main Menu -->
+    <div id="mainMenu">
+        <!-- Header Section -->
+<div class="menu-header">
+    <div class="profile-block" onclick="showAccountPopup()">
+        <i class="fas fa-user-circle profile-icon"></i>
+        <div class="profile-info">
+            <span id="username" class="username">Guest</span>
+            <div class="user-points">
+                <i class="fas fa-coins"></i>
+                <span id="userPoints">99999</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-currency">
+        <div class="currency-item tickets">
+            <i class="fas fa-ticket"></i>
+            <span id="userTickets">9</span>
+        </div>
+        <div class="currency-item stars">
+            <i class="fas fa-star"></i>
+            <span id="userStars">12</span>
+        </div>
+    </div>
+
+    <button class="settings-btn" onclick="showSettings()">
+        <i class="fas fa-cog"></i>
+    </button>
+</div>
+
+        <!-- Main Content -->
+        <div id="homeSection" class="main-section active">
+            <h1 class="game-title">DINO RUNNER</h1>
+            <div class="menu-content">
+                <select id="packPicker" class="packSelect">
+                    <option value="pack1">Default Pack</option>
+                    <option value="pack2">Retro Pack</option>
+                </select>
+                <button class="gameButton" onclick="loadGame()">START RUN</button>
+            </div>
+        </div>
+
+        <!-- Other Sections (Placeholder) -->
+        <div id="leaderboardSection" class="main-section">
+            <!-- Leaderboard content -->
+        </div>
+        <div id="shopSection" class="main-section">
+            <!-- Shop content -->
+        </div>
+        <div id="eventSection" class="main-section">
+            <!-- Event content -->
+        </div>
+        <div id="taskSection" class="main-section">
+            <!-- Task content -->
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item active" data-target="homeSection">
+                <i class="fas fa-home"></i>
+                <span>HOME</span>
+            </div>
+            <div class="nav-item" data-target="leaderboardSection">
+                <i class="fas fa-trophy"></i>
+                <span>RANK</span>
+            </div>
+            <div class="nav-item shop-icon" data-target="shopSection">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="nav-item" data-target="eventSection">
+                <i class="fas fa-calendar-alt"></i>
+                <span>EVENT</span>
+            </div>
+            <div class="nav-item" data-target="taskSection">
+                <i class="fas fa-tasks"></i>
+                <span>TASK</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Popup -->
+    <div id="accountPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h3>PLAYER PROFILE</h3>
+            <div class="popup-body">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="popup-stats">
+                    <div><i class="fas fa-user"></i> <span id="popupUsername">Guest</span></div>
+                    <div><i class="fas fa-coins"></i> Points: <span id="popupPoints">0</span></div>
+                    <div><i class="fas fa-ticket"></i> Tickets: <span id="popupTickets">0</span></div>
+                    <div><i class="fas fa-star"></i> Stars: <span id="popupStars">0</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Wrapper -->
+    <div id="gameWrapper" style="display: none;"></div>
+    <div id="bottomLayer"></div>
+
+    <!-- Scripts -->
+    <script src="menu.js"></script>
+    <script src="dino.js"></script>
+</body>
+</html>
